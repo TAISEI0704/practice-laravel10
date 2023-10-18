@@ -25,6 +25,9 @@ class TaskController extends Controller
     public function create()
     {
         //
+        $user = Auth::user();
+
+        return view('task.create', compact('user'));
     }
 
     /**
@@ -33,6 +36,9 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         //
+        $task = new Task;
+
+        $task->
     }
 
     /**
