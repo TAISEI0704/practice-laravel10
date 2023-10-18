@@ -11,29 +11,15 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                        @foreach ($tasks as $task)
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                <a class="text-blue-500 hover:text-blue-700" href="#">1</a>
+                                <a class="text-blue-500 hover:text-blue-700" href="#">{{ $task->id }}</a>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Test Task 1</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">o</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{{ $task->name }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">@if ($task->done == 1) o @else x @endif</td>
                         </tr>
-
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                <a class="text-blue-500 hover:text-blue-700" href="#">2</a>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Test Task 2</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">o</td>
-                        </tr>
-
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                <a class="text-blue-500 hover:text-blue-700" href="#">3</a>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Test Task 3</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">o</td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
